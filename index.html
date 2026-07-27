@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Gatica — Digital Product Designer</title>
+  <meta name="description" content="Portfolio of Felipe Gatica, Digital Product Designer based in Hartford. Coming soon." />
+
+  <!-- Open Graph for when you share the link -->
+  <meta property="og:title" content="Felipe Gatica — Digital Product Designer" />
+  <meta property="og:description" content="Portfolio coming soon." />
+  <meta property="og:type" content="website" />
+
+  <!-- Inter font, same family used in your current portfolio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #F5F2EA;         /* same warm beige as your portfolio */
+      --ink: #0A0A0A;        /* primary text */
+      --ink-muted: #9A9A96;  /* muted text — for "Based in Hartford" style */
+      --ink-soft: #2A2A2A;   /* body text */
+      --accent: #B8D4F5;     /* the light blue from your AI card */
+      --radius: 20px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-feature-settings: "ss01", "cv11";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 40px 56px;
+    }
+
+    /* Header — matches your portfolio */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #d4d4d0;
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.3;
+    }
+
+    .brand-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .brand-role {
+      font-size: 15px;
+      color: var(--ink-soft);
+      font-weight: 400;
+    }
+
+    .lang {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    /* Main content — centered vertically */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 720px;
+      padding: 40px 0;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-size: clamp(40px, 5.5vw, 68px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    h1 .muted {
+      color: var(--ink-muted);
+      display: block;
+    }
+
+    .teaser {
+      margin-top: 40px;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 560px;
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-top: 80px;
+    }
+
+    .footer-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .footer-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .footer-email {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-email:hover {
+      opacity: 0.6;
+    }
+
+    .footer-meta {
+      font-size: 14px;
+      color: var(--ink-soft);
+    }
+
+    .footer-copyright {
+      font-size: 14px;
+      color: var(--ink-muted);
+    }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      body { padding: 24px 20px; }
+      header { margin-bottom: 20px; }
+      main { padding: 20px 0; }
+      h1 { font-size: 36px; }
+      .teaser { font-size: 16px; margin-top: 28px; }
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        margin-top: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="avatar">FG</div>
+      <div class="brand-text">
+        <span class="brand-name">Felipe Gatica</span>
+        <span class="brand-role">Digital Product Designer</span>
+      </div>
+    </div>
+    <span class="lang">ES</span>
+  </header>
+
+  <main>
+    <div class="status">
+      <span class="status-dot"></span>
+      <span>Coming soon</span>
+    </div>
+
+    <h1>
+      New portfolio.
+      <span class="muted">Almost ready.</span>
+    </h1>
+
+    <p class="teaser">
+      I'm putting together a new home for my work — B2B and SaaS products designed with 5 years of craft. Case studies on compliance, AI, and the things I've shipped. Back shortly.
+    </p>
+  </main>
+
+  <footer>
+    <div class="footer-block">
+      <span class="footer-label">Contact</span>
+      <a class="footer-email" href="mailto:hey@felipegatica.design">hey@felipegatica.design</a>
+      <span class="footer-meta">Hartford, CT, USA</span>
+    </div>
+    <span class="footer-copyright">© 2026 All rights reserved.</span>
+  </footer>
+
+</body>
+</html>
