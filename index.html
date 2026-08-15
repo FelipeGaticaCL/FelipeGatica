@@ -2,14 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Felipe Gatica — Product Designer and Builder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=IBM+Plex+Sans+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://api.fontshare.com" />
   <link href="https://api.fontshare.com/v2/css?f[]=open-sauce-two@400,500,600,700,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPGG873C6S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EPGG873C6S');
+  </script>
 </head>
 <body>
   <main class="hero">
@@ -24,18 +34,7 @@
       </div>
     </header>
 
-    <a class="hero__link" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-      <span>Linkedin</span>
-      <img src="assets/icon-arrow-right-up.svg" width="20" height="20" alt="" />
-    </a>
-
-    <div class="hero__center">
-      <p class="hero__date">11.11.26</p>
-      <h1 class="hero__headline">design begins with people.</h1>
-      <p class="hero__soon">coming soon</p>
-    </div>
-
-    <div class="hero__bottom">
+    <section class="hero__about">
       <div class="hero__intro">
         <p>Hi, I'm Felipe.<br />Product Designer and Builder.</p>
         <p>Based in Hartford.</p>
@@ -44,7 +43,7 @@
       <p class="hero__description">
         AI is redefining digital product design. It's no longer just about creating interfaces, but designing systems that recommend, decide, and learn alongside the user. I want to work at the intersection of product, business, and technology, where design stops being a deliverable and becomes a strategic decision.
       </p>
-    </div>
+    </section>
   </main>
 </body>
 </html>

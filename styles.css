@@ -10,17 +10,19 @@
 
 html, body {
   height: 100%;
+  overscroll-behavior-y: none;
 }
 
 body {
   font-family: 'Open Sauce Two', sans-serif;
-  background: #fff;
+  background: #f9f4eb;
 }
 
 .hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   color: #fff;
 }
@@ -63,10 +65,11 @@ body {
 }
 
 .hero__title {
-  font-family: 'Open Sauce Two', sans-serif;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 500;
   display: flex;
   flex-direction: column;
+  gap: 0px;
 }
 
 .hero__name {
@@ -79,77 +82,44 @@ body {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.hero__link {
+.hero__about {
   position: absolute;
-  right: clamp(20px, calc((1728 - 1527 - 81) / var(--design-width) * 100vw), 120px);
-  top: clamp(20px, calc(56 / var(--design-width) * 100vw), 56px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: calc(801 / 1086 * 100%);
+  z-index: 2;
+  background: #f9f4eb;
+  color: #000;
   display: flex;
-  align-items: center;
-  gap: 4px;
-  color: #fff;
-  text-decoration: none;
-  font-family: 'Open Sauce Two', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  z-index: 2;
-}
-
-.hero__center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  text-align: center;
-  z-index: 2;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.hero__date {
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 600;
-  font-size: clamp(16px, 1.4vw, 24px);
-  letter-spacing: -0.02em;
-}
-
-.hero__headline {
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 700;
-  font-size: clamp(28px, 2.8vw, 48px);
-  letter-spacing: -0.02em;
-}
-
-.hero__soon {
-  font-family: 'Libre Franklin', sans-serif;
-  font-weight: 600;
-  font-size: clamp(16px, 1.4vw, 24px);
-  letter-spacing: -0.02em;
+  align-items: flex-start;
+  gap: clamp(40px, calc(150 / var(--design-width) * 100vw), 150px);
+  padding: clamp(40px, calc(100 / var(--design-width) * 100vw), 100px) clamp(20px, calc(120 / var(--design-width) * 100vw), 120px);
 }
 
 .hero__intro {
-  position: absolute;
-  left: clamp(20px, calc(120 / var(--design-width) * 100vw), 120px);
-  bottom: clamp(24px, calc((1086 - 875) / 1086 * 40%), 8%);
   font-family: 'Open Sauce Two', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  line-height: normal;
+  flex-shrink: 0;
+}
+
+.hero__intro p {
   font-weight: 500;
-  font-size: clamp(16px, 1.4vw, 24px);
-  letter-spacing: -0.02em;
-  line-height: 30px;
-  z-index: 2;
-  max-width: 400px;
+}
+
+.hero__intro p + p {
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .hero__description {
-  position: absolute;
-  left: clamp(20px, calc(624 / var(--design-width) * 100vw), 624px);
-  right: clamp(20px, calc((1728 - 624 - 526) / var(--design-width) * 100vw), 120px);
-  bottom: clamp(24px, calc((1086 - 875) / 1086 * 40%), 8%);
   font-family: 'Open Sauce Two', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 17px;
+  line-height: normal;
   max-width: 526px;
-  z-index: 2;
 }
 
 @media (max-width: 900px) {
@@ -168,52 +138,20 @@ body {
     top: clamp(16px, calc(32 / var(--mobile-design-height) * 100dvh), 32px);
   }
 
-  .hero__link {
-    left: auto;
-    right: clamp(12px, calc(16 / var(--mobile-design-width) * 100vw), 16px);
-    top: clamp(20px, calc(42 / var(--mobile-design-height) * 100dvh), 42px);
+  .hero__bg {
+    object-position: 50% 40%;
+    transform: translateY(-108px);
   }
 
-  .hero__center {
-    top: clamp(28%, calc(362 / var(--mobile-design-height) * 100dvh), 34%);
-    transform: translate(-50%, 0);
-    width: min(408px, calc(100% - 32px));
-    padding: 0;
-  }
-
-  .hero__date,
-  .hero__soon {
-    font-size: clamp(15px, calc(18 / var(--mobile-design-width) * 100vw), 18px);
-    letter-spacing: -0.36px;
-  }
-
-  .hero__headline {
-    font-size: clamp(24px, calc(32 / var(--mobile-design-width) * 100vw), 32px);
-    letter-spacing: -0.64px;
-  }
-
-  .hero__bottom {
-    position: absolute;
-    bottom: 132px;
-    left: clamp(12px, calc(16 / var(--mobile-design-width) * 100vw), 16px);
-    right: clamp(12px, calc(16 / var(--mobile-design-width) * 100vw), 16px);
-    display: flex;
+  .hero__about {
+    top: calc(555 / 956 * 100%);
     flex-direction: column;
+    align-items: flex-start;
     gap: 24px;
-    z-index: 2;
+    padding: clamp(40px, calc(100 / var(--mobile-design-width) * 100vw), 100px) clamp(12px, calc(16 / var(--mobile-design-width) * 100vw), 16px);
   }
 
-  .hero__intro,
   .hero__description {
-    position: static;
-    left: auto;
-    right: auto;
     max-width: none;
-    bottom: auto;
-  }
-
-  .hero__intro {
-    font-size: 20px;
-    line-height: 24px;
   }
 }
